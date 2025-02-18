@@ -70,7 +70,7 @@ const WhyUs: FC = () => {
             className="order-first md:order-last"
           >
             <Image
-              src="/images/2.jfif"
+              src="/images/3.jpeg"
               alt="Why Us"
               className="w-full h-auto contrast-125 object-cover rounded-md shadow-md"
               height={900}
