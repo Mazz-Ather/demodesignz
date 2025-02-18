@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Tabs,
@@ -45,24 +45,25 @@ const Hero = () => {
       <div className="absolute inset-0  bg-black/20" />
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-16 md:py-20 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-1 sm:px-4 py-16 md:py-20 sm:px-6 lg:px-8">
         {/* White Box with Tabs */}
-        <div className="bg-white rounded-md shadow-lg p-6 md:p-8">
-          <Tabs defaultValue="callDoctor" className="space-y-6">
+        <div className="bg-white rounded-md shadow-lg p-4 sm:p-6 md:p-8">
+          <Tabs defaultValue="callDoctor" className="sm:space-y-6">
             {/* Tabs Header */}
-            <TabsList className="flex justify-center space-x-4">
+            <TabsList className="flex justify-center -space-x-1 sm:space-x-4">
               {/* Call Doctor Tab Trigger */}
               <TabsTrigger
                 value="callDoctor"
                 className="
                   relative group 
-                  px-4 py-2 
-                  text-lg 
+                  sm:px-4 sm:py-2 
+                  sm:text-lg 
                   text-gray-700 
                   hover:text-blue-600 
                   transition-colors duration-300
                   data-[state=active]:text-blue-600
-                "
+                
+                  "
               >
                 Call Doctor
                 {/* Underline effect */}
@@ -90,8 +91,8 @@ const Hero = () => {
                 value="bookAppointment"
                 className="
                   relative group 
-                  px-4 py-2 
-                  text-lg 
+                  sm:px-4 sm:py-2 
+                  sm:text-lg 
                   text-gray-700 
                   hover:text-blue-600 
                   transition-colors duration-300
@@ -124,12 +125,13 @@ const Hero = () => {
                 value="joinTeam"
                 className="
                   relative group 
-                  px-4 py-2 
-                  text-lg 
+                  sm:px-4 sm:py-2 
+                  sm:text-lg 
                   text-gray-700 
                   hover:text-blue-600 
                   transition-colors duration-300
                   data-[state=active]:text-blue-600
+                  hidden sm:block 
                 "
               >
                 Join Our Team
@@ -302,6 +304,24 @@ const Hero = () => {
           </Tabs>
         </div>
       </div>
+      {/* Extra responsive styles for Tab Headings on small screens */}
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .flex.justify-center.space-x-4 {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+          }
+          .flex.justify-center.space-x-4 > * {
+            flex: 1 1 33%;
+            max-width: 33%;
+            text-align: center;
+            /* Optionally reduce padding and font-size */
+            padding: 0.5rem !important;
+            font-size: 0.9rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
